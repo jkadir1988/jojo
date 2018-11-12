@@ -13,9 +13,14 @@ public class Examen {
 		System.out.println("Welkom bij dit geweldige examen!");
 		for (int i = 0; i < vragen.size(); i++) {
 			System.out.println(vragen.get(i).vraagTekst);
-			vragen.get(i).toonAntwoorden();
-			vragen.get(i).gegevenAntwoord = sc.nextLine();
-			boolean score = vragen.get(i).checkAntwoord(vragen.get(i).gegevenAntwoord);
+			if (vragen.get(i) instanceof MeerkeuzeVraag) {
+				((MeerkeuzeVraag)vragen.get(i)).toonAntwoorden();
+			} else {
+				System.out.println("Toets h voor een hint!");
+			}
+			String gegevenAntwoord = sc.nextLine();
+			
+			boolean score = vragen.get(i).checkAntwoord(gegevenAntwoord);
 			if (score) {
 				leerling.uitslag++;
 			}

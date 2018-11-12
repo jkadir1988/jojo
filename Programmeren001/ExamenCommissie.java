@@ -8,11 +8,12 @@ public class ExamenCommissie {
 	static {
 		Examen examen1 = new Examen();
 		examen1.vragen
-				.add(new Vraag("Is de konijn een dier?", new String[] { "ja", "nee", "misschien", "soms" }, "ja"));
-		examen1.vragen.add(new Vraag("Wie was de zanger van Nirvana?",
+				.add(new MeerkeuzeVraag("Is de konijn een dier?", new String[] { "ja", "nee", "misschien", "soms" }, "ja"));
+		examen1.vragen.add(new MeerkeuzeVraag("Wie was de zanger van Nirvana?",
 				new String[] { "lil Kleine", "Dave Grohl", "Kurt Cobain", "Murth Mossel" }, "Kurt Cobain"));
-		examen1.vragen.add(new Vraag("Hoeveel dagen zitten er in een week?",
+		examen1.vragen.add(new MeerkeuzeVraag("Hoeveel dagen zitten er in een week?",
 				new String[] { "Dat ligt eraan", "5", "6", "7", "8" }, "7"));
+		examen1.vragen.add(new OpenVraag("Wat is de hoofdstad van Overijsel?", "Hint. Klinkt als Twello.", "Zwello"));
 		examens.add(examen1);
 	}
 

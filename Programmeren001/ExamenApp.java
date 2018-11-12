@@ -6,13 +6,11 @@ import Programmeren002.Leerling;
 
 public class ExamenApp {
 	Scanner scanner = new Scanner(System.in); 
-	Examen examen = new Examen();
-	Leerling leerling = new Leerling();
+	
 	public static void main(String[] args) {
-		
 		ExamenApp ea = new ExamenApp();
-		
 		ea.starten();
+		
 	}
 	void starten() {
 		System.out.println(printMenu());
@@ -22,8 +20,7 @@ public class ExamenApp {
 			System.out.println("jojo 1");
 			break;
 		case 2:
-			System.out.println("jojo 2");
-			examen.examenAfnemen(leerling);
+			ExamenCommissie.examens.get(0).examenAfnemen(new Leerling());
 			break;
 		default:
 			System.out.println("kies jojo kneus");
@@ -33,9 +30,8 @@ public class ExamenApp {
 		StringBuilder sb = new StringBuilder();
 		sb.append("1. Invoeren Nakijken Overzicht examens\n");
 		sb.append("2. Examen afnemen");
-		
 		return sb.toString();
 	}
-
+	
 }
 
