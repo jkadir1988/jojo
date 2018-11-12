@@ -8,20 +8,7 @@ public class OpenVraag extends Vraag {
 	OpenVraag(String vraagTekst, String hint, String juisteAntwoord) {
 		super(vraagTekst, juisteAntwoord);
 		this.hint = hint;
-		
-	}
-	
-	boolean checkAntwoord(String gegevenAntwoord) {
-		if (gegevenAntwoord.equalsIgnoreCase("h")) {
-			System.out.println(hint);
-			return false;
-		} else if (gegevenAntwoord.equalsIgnoreCase(juisteAntwoord)) {
-			
-			return true;
-		} else {
-			System.out.println("Helaas, het goede antwoord is " + juisteAntwoord);
-			return false;
-		}
+
 	}
 
 	String getAntwoord() {
@@ -33,8 +20,8 @@ public class OpenVraag extends Vraag {
 		String gegevenAntwoord = scanner.nextLine();
 		if (gegevenAntwoord.equalsIgnoreCase("h")) {
 			System.out.println(hint);
-			return "";
+			gegevenAntwoord = scanner.nextLine();
 		}
-		return "";
+		return gegevenAntwoord;
 	}
 }

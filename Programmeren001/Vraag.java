@@ -32,7 +32,7 @@ public abstract class Vraag {
 	String getAntwoord() {
 		return juisteAntwoord;
 	}
-	
+
 	abstract String beantwoorden(Scanner scanner);
 
 }

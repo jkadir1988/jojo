@@ -11,17 +11,20 @@ public class Examen {
 
 	void examenAfnemen(Leerling leerling) {
 		System.out.println("Welkom bij dit geweldige examen!");
+		leerling.examenMaken();
 		for (int i = 0; i < vragen.size(); i++) {
 			System.out.println(vragen.get(i).vraagTekst);
 			if (vragen.get(i) instanceof MeerkeuzeVraag) {
 				((MeerkeuzeVraag) vragen.get(i)).toonAntwoorden();
-			} 
-			
-			String invoer = vragen.get(i).beantwoorden(sc);//sc.nextLine();
+			}
+
+			String invoer = vragen.get(i).beantwoorden(sc);// sc.nextLine();
+			leerling.geschiedenis.get(0).gegevenAntwoorden.add(invoer);
 			boolean score = vragen.get(i).checkAntwoord(invoer);
 			if (score) {
 				leerling.uitslag++;
 			}
+
 		}
 		System.out.println(leerling.uitslag + " van de " + vragen.size() + " goed!"
 				+ ((leerling.uitslag * 100) / vragen.size()) + "%");
