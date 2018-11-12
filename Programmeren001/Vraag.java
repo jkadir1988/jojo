@@ -1,10 +1,12 @@
 package Programmeren001;
 
+import java.util.Scanner;
+
 public abstract class Vraag {
 	String vraagTekst;
 
 	// String gegevenAntwoord;
-	private String juisteAntwoord;
+	protected String juisteAntwoord;
 
 	Vraag(String vraagTekst, String juisteAntwoord) {
 		this.vraagTekst = vraagTekst;
@@ -30,5 +32,7 @@ public abstract class Vraag {
 	String getAntwoord() {
 		return juisteAntwoord;
 	}
+	
+	abstract String beantwoorden(Scanner scanner);
 
 }

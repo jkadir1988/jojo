@@ -13,7 +13,7 @@ public class ExamenCommissie {
 				new String[] { "lil Kleine", "Dave Grohl", "Kurt Cobain", "Murth Mossel" }, "Kurt Cobain"));
 		examen1.vragen.add(new MeerkeuzeVraag("Hoeveel dagen zitten er in een week?",
 				new String[] { "Dat ligt eraan", "5", "6", "7", "8" }, "7"));
-		examen1.vragen.add(new OpenVraag("Wat is de hoofdstad van Overijsel?", "Hint. Klinkt als Twello.", "Zwello"));
+		examen1.vragen.add(new OpenVraag("Wat is de hoofdstad van Overijsel?\n ", "Hint. Klinkt als Twello.", "Zwello"));
 		examens.add(examen1);
 	}
 

@@ -14,18 +14,17 @@ public class Examen {
 		for (int i = 0; i < vragen.size(); i++) {
 			System.out.println(vragen.get(i).vraagTekst);
 			if (vragen.get(i) instanceof MeerkeuzeVraag) {
-				((MeerkeuzeVraag)vragen.get(i)).toonAntwoorden();
-			} else {
-				System.out.println("Toets h voor een hint!");
-			}
-			String gegevenAntwoord = sc.nextLine();
+				((MeerkeuzeVraag) vragen.get(i)).toonAntwoorden();
+			} 
 			
-			boolean score = vragen.get(i).checkAntwoord(gegevenAntwoord);
+			String invoer = vragen.get(i).beantwoorden(sc);//sc.nextLine();
+			boolean score = vragen.get(i).checkAntwoord(invoer);
 			if (score) {
 				leerling.uitslag++;
 			}
 		}
-		System.out.println(leerling.uitslag + " van de " + vragen.size() + " goed!" + ((leerling.uitslag * 100) / vragen.size()) + "%");
-		
+		System.out.println(leerling.uitslag + " van de " + vragen.size() + " goed!"
+				+ ((leerling.uitslag * 100) / vragen.size()) + "%");
+
 	}
 }

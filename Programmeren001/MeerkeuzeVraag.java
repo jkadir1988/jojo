@@ -1,5 +1,7 @@
 package Programmeren001;
 
+import java.util.Scanner;
+
 public class MeerkeuzeVraag extends Vraag {
 	String[] antwoorden;
 
@@ -11,5 +13,9 @@ public class MeerkeuzeVraag extends Vraag {
 		for (int a = 0; a < antwoorden.length; a++) {
 			System.out.println(antwoorden[a]);
 		}
+	}
+	String beantwoorden(Scanner scanner) {
+		System.out.println("Maak je keuze");
+		return "bittereKoffie";
 	}
 }
